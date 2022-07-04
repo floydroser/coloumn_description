@@ -1,9 +1,7 @@
 <launch>
   <arg
     name="model" />
-  <param
-    name="robot_description"
-    textfile="$(find coloumn_description)/urdf/coloumn_description.urdf" />
+  <include file="$(find coloumn_description)/launch/load_coloumn.launch" />
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"

@@ -63,7 +63,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="-1.5708 0 0" />
+        rpy="${-radians(90)} 0 0" />
       <geometry>
         <mesh
           filename="package://coloumn_description/meshes/dae/link_1.dae" />
@@ -89,7 +89,7 @@
     type="continuous">
     <origin
       xyz="0 0 -0.052"
-      rpy="1.5708 0 -0.0095623" />
+      rpy="${radians(90)} 0 0" />
     <parent
       link="base_link" />
     <child
@@ -116,7 +116,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="-1.5708 0 0" />
+        rpy="${-radians(90)} 0 0" />
       <geometry>
         <mesh
           filename="package://coloumn_description/meshes/dae/link_2.dae" />
@@ -174,7 +174,7 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="-3.14 0 0" />
+        rpy="${-radians(180)} 0 0" />
       <geometry>
         <mesh
           filename="package://coloumn_description/meshes/dae/link_3.dae" />
@@ -200,16 +200,16 @@
     type="prismatic">
     <origin
       xyz="-0.24211 0 0"
-      rpy="0 1.5708 0" />
+      rpy="0 ${radians(90)} 0" />
     <parent
       link="link_2" />
     <child
       link="link_3" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
-      lower="-0.6"
-      upper="0"
+      lower="0"
+      upper="0.6"
       effort="0"
       velocity="0" />
   </joint>
@@ -258,7 +258,7 @@
     type="revolute">
     <origin
       xyz="0 0 -1.0315"
-      rpy="2.81 0 -3.1416" />
+      rpy="2.81 0 ${-radians(180)}" />
     <parent
       link="link_3" />
     <child
@@ -267,7 +267,7 @@
       xyz="1 0 0" />
     <limit
       lower="0"
-      upper="0.66"
+      upper="${radians(38)}"
       effort="0"
       velocity="0" />
   </joint>
@@ -278,7 +278,7 @@
     type="fixed">
     <origin
       xyz="0 -1.6145 0"
-      rpy="0 0 0" />
+      rpy="${radians(90)} ${-radians(90)} 0" />
     <parent
       link="link_4" />
     <child
